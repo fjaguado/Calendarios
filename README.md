@@ -1,6 +1,6 @@
 # HelpDev Calendarios
 
-### WTF ¿Is this in Spanish?
+### WTF. Is this in Spanish?
 Yes, the idea of this project is to help NGO's from our community to make calendars and to adapt to their needs, maybe in the future we can made something for international organizations, but not that project.
 
 ### La idea
