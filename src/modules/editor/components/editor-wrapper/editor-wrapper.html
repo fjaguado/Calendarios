@@ -3,11 +3,29 @@
     <li class="cal-months-month"
         ng-repeat="month in $ctrl.months">
         
-        <header class="cal-months-header"></header>
+        <header class="cal-months-header">
+            <h2>{{month.month}} - {{month.year}}</h2>
+            <ul class="cal-months-week">
+                <li class="cal-months-week_day"
+                    ng-repeat="weekDay in $ctrl.weekDays">
+                    {{weekDay}}
+                </li>
+            </ul>
+        </header>
         <ul class="cal-months-days">
             <li class="cal-months-day"
                 ng-repeat="dayInfo in month.days">
-                {{dayInfo.weekDay}} - {{dayInfo.day}}
+                
+                <div class="cal-months-day_info cal-months-day_info--void"
+                     ng-if="day_info.day === -1">
+                     X
+                </div>
+                
+                <div class="cal-months-day_info"
+                     ng-if="dayInfo.day !== -1">
+                     {{dayInfo.weekDay}} - {{dayInfo.day}}
+                </div>
+                
             </li>
         </ul>    
     </li>

@@ -3,6 +3,7 @@
     
     function EditorController(monthsService) {
         this.months = monthsService.get();
+        this.weekDays = monthsService.getWeek();
     }
 
     angular.module('app.editor')
