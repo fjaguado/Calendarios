@@ -1,2 +1,4 @@
 node_modules/
-typings/
+.test/
+app/
+src/scss/vendor/
