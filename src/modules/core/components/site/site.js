@@ -2,7 +2,7 @@
     'use strict';
     
     angular.module('app.core')
-        .component('ckSite', {
+        .component('calSite', {
             templateUrl: 'modules/core/components/site/site.html'
         });
 

@@ -1,0 +1,14 @@
+<cal-editor-menu></cal-editor-menu>
+<ul class="cal-months">
+    <li class="cal-months-month"
+        ng-repeat="month in $ctrl.months">
+        
+        <header class="cal-months-header"></header>
+        <ul class="cal-months-days">
+            <li class="cal-months-day"
+                ng-repeat="dayInfo in month.days">
+                {{dayInfo.weekDay}} - {{dayInfo.day}}
+            </li>
+        </ul>    
+    </li>
+</ul>

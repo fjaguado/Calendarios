@@ -2,7 +2,7 @@
     'use strict';
 
     function routingConfiguration($urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/editor/');
     }
 
     angular.module('app')

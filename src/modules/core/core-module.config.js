@@ -5,7 +5,7 @@
         $stateProvider
             .state('app', {
                 url: '/',
-                component: 'ckSite'
+                component: 'calSite'
             });
     }
 
