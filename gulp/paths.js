@@ -36,6 +36,11 @@ module.exports = {
         },
 
         images: {
+            app: roots.app + '/locale',
+            src: roots.src + '/locale/**/*.*'
+        },
+        
+        locale: {
             app: roots.app + '/images',
             src: roots.src + '/images/**/*.*'
         },

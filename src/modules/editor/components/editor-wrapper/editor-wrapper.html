@@ -4,11 +4,11 @@
         ng-repeat="month in $ctrl.months">
         
         <header class="cal-months-header">
-            <h2>{{month.month}} - {{month.year}}</h2>
+            <h2>{{'Months.' + month.month | translate}} - {{month.year}}</h2>
             <ul class="cal-months-week">
                 <li class="cal-months-week_day"
                     ng-repeat="weekDay in $ctrl.weekDays">
-                    {{weekDay}}
+                    {{'Days.' + weekDay | translate}}
                 </li>
             </ul>
         </header>

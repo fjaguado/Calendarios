@@ -59,6 +59,10 @@ module.exports = function (gulp, paths) {
         //Images
         gulp.src(paths.debug.images.src)
             .pipe(gulp.dest(paths.debug.images.app));
+            
+        //Locale
+        gulp.src(paths.debug.locale.src)
+            .pipe(gulp.dest(paths.debug.locale.app));
 
         // Fonts
         return gulp.src(paths.debug.fonts.src)

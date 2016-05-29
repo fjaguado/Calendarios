@@ -9,8 +9,8 @@
                 en_US: 'en',
                 es_ES: 'es'
             })
-            .fallbackLanguage('en')
-            .preferredLanguage('en')
+            .fallbackLanguage('es')
+            .preferredLanguage('es')
             .useLocalStorage()
             .useStaticFilesLoader({
                 prefix: 'locale/Locale.',
