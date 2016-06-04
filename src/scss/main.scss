@@ -9,12 +9,12 @@
 
 // Components
 // Components structure (BEM no strict)
-// .ck- (the module)
-// .ck-component (the block)
-// .ck-component-child (the element)
-// DON'T DO THAT .ck-component-child-child2 - div.ck-component-child > div.ck-component-child-child2
-// BETTER THAT .ck-component-child .ck-component-child2 - div.ck-component-child > div.ck-component-child2
-// .ck-component--modifier (the modifier)
-@import 'components/ck/header';
-@import 'components/ck/menu';
-@import 'components/ck/debtors_form';
+// .cal- (the module)
+// .cal-component (the blocal)
+// .cal-component-child (the element)
+// DON'T DO THAT .cal-component-child-child2 - div.cal-component-child > div.cal-component-child-child2
+// BETTER THAT .cal-component-child .cal-component-child2 - div.cal-component-child > div.cal-component-child2
+// .cal-component--modifier (the modifier)
+@import 'components/cal/header';
+@import 'components/cal/menu';
+@import 'components/cal/months';

@@ -8,11 +8,11 @@
 // $color-name-light
 // $color-name-lighter
 
-$color-brand: #9D50BB;
-$color-brand-dark: #7A46AE;
-$color-brand-darker: #6E48AA;
-$color-secondary: #00AEEF;
-$color-secondary-dark: #007AC2;
+$color-brand: #6AC6D9;
+$color-brand-dark: darken($color-brand, 10%);
+$color-brand-darker: darken($color-brand, 30%);
+$color-secondary: #FFAEEF;
+$color-secondary-dark: #FF7AC2;
 
 $color-background-dark: #303030;
 $color-background-darker: #2C2C2C;
@@ -21,6 +21,7 @@ $color-background-semilight: #F2F2F2;
 $color-background-light: #FFF;
 
 $color-foreground-dark: #303030;
+$color-foreground-semidark: #676767;
 
 $color-foreground-semilight: #9A9A9A;
 $color-foreground-light: #FFF;
@@ -28,7 +29,7 @@ $color-foreground-light: #FFF;
 $color-error: #E74C3C;
 $color-success: #2ECC71;
 
-$color-borders: #D6D6D6;
+$color-border: #E6E6E5;
 $color-grid-color: #7A7A7A;
 
 // Sizes
