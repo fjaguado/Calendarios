@@ -11,8 +11,3 @@ También puede servir para pequeñas organizaciones o equipo y poner días relev
 ### Instrucciones
 Visita la web (-----) en la página principal explicamos en que consiste todo, puedes dirigirte al editor y si es la primera vez que lo haces verás un pequeño tutorial.
 Puedes importar y exportar la configuración de tu calendario a un archivo .json recuerda guardar bien ese archivo en tu ordenador para no perder el calendario.
-
-### Tecnologías
-- TypeScript
-- Angular 2
-- .....
