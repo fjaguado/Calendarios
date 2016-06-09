@@ -9,5 +9,6 @@ Una vez generado puedes exportar a un PDF e imprimir los calendarios, incluso ve
 También puede servir para pequeñas organizaciones o equipo y poner días relevantes que se repiten como santos, cumpleaños, etc.
 
 ### Instrucciones
-Visita la web (-----) en la página principal explicamos en que consiste todo, puedes dirigirte al editor y si es la primera vez que lo haces verás un pequeño tutorial.
+Visita la web http://calendarios.js.org en la página principal explicamos en que consiste todo, puedes dirigirte al editor y si es la primera vez que lo haces verás un pequeño tutorial.
 Puedes importar y exportar la configuración de tu calendario a un archivo .json recuerda guardar bien ese archivo en tu ordenador para no perder el calendario.
+

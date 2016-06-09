@@ -1,0 +1,30 @@
+<div class="cal-options">
+    
+</div>
+<cal-months class="cal-months">
+    <div class="cal-months-month"
+        ng-repeat="month in $ctrl.months">
+        
+        <h2 class="cal-months-header">
+            {{'Months.' + month.month | translate}}
+        </h2>
+        <ul class="cal-months-week">
+            <li class="cal-months-week_day"
+                ng-repeat="weekDay in $ctrl.weekDays">
+                {{'Days.' + weekDay | translate}}
+            </li>
+        </ul>
+        <ul class="cal-months-days">
+            <li class="cal-months-day"
+                ng-class="{'cal-months-day--void': dayInfo.day === -1}"
+                ng-repeat="dayInfo in month.days">
+                
+                <div class="cal-months-day_info"
+                        ng-if="dayInfo.day !== -1">
+                        {{dayInfo.day}}
+                </div>
+                
+            </li>
+        </ul>    
+    </div>
+</cal-months>
