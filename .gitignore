@@ -1,5 +1,3 @@
 node_modules/
 .test/
-# for cirelease
-# app/
 src/scss/vendor/
