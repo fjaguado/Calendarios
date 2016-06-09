@@ -6,8 +6,8 @@
 
     angular.module('app.editor')
         .component('calMonthForm', {
-            controller: EditorController,
-            templateUrl: 'modules/editor/components/editor-wrapper/editor-wrapper.html'
+            controller: MonthFormController,
+            templateUrl: 'modules/editor/components/month-form/month-form.html'
         });
 
 })(this, angular);

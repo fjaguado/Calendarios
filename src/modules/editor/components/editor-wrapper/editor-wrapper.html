@@ -1,6 +1,8 @@
-<cal-editor-menu></cal-editor-menu>
-<ul class="cal-months">
-    <li class="cal-months-month"
+<div class="cal-options">
+    
+</div>
+<cal-months class="cal-months">
+    <div class="cal-months-month"
         ng-repeat="month in $ctrl.months">
         
         <h2 class="cal-months-header">
@@ -18,11 +20,11 @@
                 ng-repeat="dayInfo in month.days">
                 
                 <div class="cal-months-day_info"
-                     ng-if="dayInfo.day !== -1">
-                     {{dayInfo.day}}
+                        ng-if="dayInfo.day !== -1">
+                        {{dayInfo.day}}
                 </div>
                 
             </li>
         </ul>    
-    </li>
-</ul>
+    </div>
+</cal-months>
