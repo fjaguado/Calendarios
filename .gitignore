@@ -1,4 +1,5 @@
 node_modules/
 .test/
-app/
+# for cirelease
+# app/
 src/scss/vendor/
