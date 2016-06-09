@@ -3,6 +3,7 @@
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
 
 module.exports = function (gulp, paths) {
 
@@ -14,8 +15,8 @@ module.exports = function (gulp, paths) {
     gulp.task('libs:release:js', function () {
         return gulp.src(paths.debug.js.vendor.files)
             .pipe(sourcemaps.init())
-            .pipe(concat('vendor.min.js', { newLine: ';' }))
-            .pipe(uglify())
+            .pipe(concat('vendor.min.js', { newLine: ';\r\n' }))
+            .pipe(uglify().on('error', gutil.log))
             .pipe(sourcemaps.write())
             .pipe(gulp.dest(paths.release.app.folder));
     });

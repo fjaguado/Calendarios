@@ -10,6 +10,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var templateCache = require('gulp-angular-templatecache');
 var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
 
 module.exports = function (gulp, paths) {
 
@@ -72,7 +73,7 @@ module.exports = function (gulp, paths) {
     gulp.task('app:release:js', function () {
         return gulp.src(paths.debug.js.app.files)
             .pipe(sourcemaps.init())
-            .pipe(concat('app.min.js', { newLine: ';' }))
+            .pipe(concat('app.min.js', { newLine: ';\r\n' }))
             .pipe(ngAnnotate())
             .pipe(uglify())
             .pipe(sourcemaps.write())
@@ -94,7 +95,7 @@ module.exports = function (gulp, paths) {
         var options = {
             read: false,
             addRootSlash: false,
-            relative: true
+            ignorePath: 'app'
         };
         
         return gulp.src(paths.debug.index)
