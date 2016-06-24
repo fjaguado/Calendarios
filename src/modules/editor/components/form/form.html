@@ -3,7 +3,7 @@
 
     <div class="cal-form-content">
         <span class="cal-form-close"
-                ng-click="$ctrl.show = false">
+                ng-click="$ctrl.close()"">
                     X
         </span>
 
@@ -12,6 +12,7 @@
                     Título
                 </span>
                 <input type="text" 
+                        ng-model="$ctrl.information.title"
                         class="cal-form-input">
         </label>
 
@@ -24,10 +25,11 @@
                 </select>
         </label>
 
-        <button class="cal-form-button">
+        <button class="cal-form-button"
+                ng-click="$ctrl.save()">
             Guardar
         </button>
     </div>
 
-    <div class="cal-form-overlay" ng-click="$ctrl.show = false"></div>
+    <div class="cal-form-overlay" ng-click="$ctrl.close()"></div>
 </div>

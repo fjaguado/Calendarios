@@ -19,14 +19,29 @@
                 ng-class="{'cal-months-day--void': dayInfo.day === -1}"
                 ng-repeat="dayInfo in month.days">
                 <div class="cal-months-day_wrapper"
-                    ng-if="dayInfo.day !== -1"
-                    ng-click="$ctrl['showPopover' + month.month + $index] = !$ctrl['showPopover' + month.month + $index]">
+                    ng-if="dayInfo.day !== -1">
 
                     <div class="cal-months-day_info">
                             {{dayInfo.day}}
                     </div>
+
+                    <ul class="cal-months-day_events">
+                        <li class="cal-months-day_events_add"
+                            ng-click="$ctrl['showPopover' + month.month + dayInfo.day] = !$ctrl['showPopover' + month.month + dayInfo.day]">
+                            ( + )
+                        </li>
+
+                        <li class="cal-months-day_event"
+                            ng-repeat="(id, event) in $ctrl.events[month.month][dayInfo.day]"
+                            ng-click="$ctrl['information' + month.month + dayInfo.day] = event; $ctrl['showPopover' + month.month + dayInfo.day] = !$ctrl['showPopover' + month.month + dayInfo.day]">
+                            {{event.title}}
+                        </li>
+                    </ul>
                 </div>
-                <cal-form month="month.month" day="dayInfo.day" show="$ctrl['showPopover' + month.month + $index]"></cal-form>
+                <cal-form   month="month.month" 
+                            day="dayInfo.day" 
+                            information="$ctrl['information' + month.month + dayInfo.day]" 
+                            show="$ctrl['showPopover' + month.month + dayInfo.day]"></cal-form>
             </li>
         </ul>
     </div>

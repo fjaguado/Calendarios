@@ -84,7 +84,7 @@
         }
 
         &--void {
-            &:hover:before {
+            &:hover {
                 background: transparent;
                 cursor: not-allowed;
             }
@@ -98,14 +98,9 @@
         top: 0;
         width: 100%;
 
-        &:hover:before {
+        &:hover {
             background: rgba($color-brand, .3);
-            content: '';
             cursor: pointer;
-            height: 100%;
-            position: absolute;
-            width: 100%;
-            z-index: 1;
         }
     }
 
