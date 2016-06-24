@@ -1,9 +1,17 @@
 (function(global, angular) {
     'use strict';
     
-    function EditorController(monthsService) {
+    function EditorController($rootScope, monthsService, calendarService) {
         this.months = monthsService.get();
         this.weekDays = monthsService.getWeek();
+        this.events = calendarService.get().events;
+
+        var self = this;
+        this.refresh = function() {
+            self.events = calendarService.get().events;
+        };
+        
+        $rootScope.$on('calendarUpdated', this.refresh);
     }
 
     angular.module('app.editor')
