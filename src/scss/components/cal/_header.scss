@@ -6,11 +6,9 @@
     box-shadow: 0 -3px 20px -1px rgba($color-background-dark, .75);
     display: block;
     height: $size-header;
-    margin-left: $padding-menu-wrapper;
     padding: 0 $padding;
     position: relative;
     user-select: none;
-    width: calc(100% - #{$padding-menu-wrapper});
 
     @media screen and (max-width: $media-screen-max-tablet) {
         padding-left: $padding-containers;

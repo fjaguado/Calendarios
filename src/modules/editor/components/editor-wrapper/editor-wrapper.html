@@ -18,13 +18,16 @@
             <li class="cal-months-day"
                 ng-class="{'cal-months-day--void': dayInfo.day === -1}"
                 ng-repeat="dayInfo in month.days">
-                
-                <div class="cal-months-day_info"
-                        ng-if="dayInfo.day !== -1">
-                        {{dayInfo.day}}
+                <div class="cal-months-day_wrapper"
+                    ng-if="dayInfo.day !== -1"
+                    ng-click="$ctrl['showPopover' + month.month + $index] = !$ctrl['showPopover' + month.month + $index]">
+
+                    <div class="cal-months-day_info">
+                            {{dayInfo.day}}
+                    </div>
                 </div>
-                
+                <cal-form month="month.month" day="dayInfo.day" show="$ctrl['showPopover' + month.month + $index]"></cal-form>
             </li>
-        </ul>    
+        </ul>
     </div>
 </cal-months>

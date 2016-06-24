@@ -17,9 +17,4 @@ body {
 }
 
 .content {
-    padding-left: $padding-menu-wrapper;
-
-    @media screen and (max-width: $media-breakpoint-menu) {
-        padding-left: 0;
-    }
 }

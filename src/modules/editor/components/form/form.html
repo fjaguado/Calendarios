@@ -1,0 +1,33 @@
+<div class="cal-form"
+    ng-show="$ctrl.show">
+
+    <div class="cal-form-content">
+        <span class="cal-form-close"
+                ng-click="$ctrl.show = false">
+                    X
+        </span>
+
+        <label class="cal-form-label">
+                <span class="cal-form-labeltext">
+                    Título
+                </span>
+                <input type="text" 
+                        class="cal-form-input">
+        </label>
+
+        <label class="cal-form-label">
+                <span class="cal-form-labeltext">
+                     Tipo de evento
+                </span>
+                <select class="cal-form-select">
+                    <option value="Tipo1">Tipo1</option>
+                </select>
+        </label>
+
+        <button class="cal-form-button">
+            Guardar
+        </button>
+    </div>
+
+    <div class="cal-form-overlay" ng-click="$ctrl.show = false"></div>
+</div>

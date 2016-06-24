@@ -3,17 +3,20 @@
 .cal-months {
     $border-size: 4px;
     $border: $border-size solid $color-border;
-    $padding-h: 90px;
-    $padding-v: 80px;
+    $padding-h: 40px;
+    $padding-v: 30px;
     padding: 10%;
 
     &-month {
         color: $color-foreground-dark;
+        font-size: .8em;
+        margin: 0 auto;
         margin-bottom: 20px;
+        width: 90%;
     }
 
     &-header {
-        $height: 170px;
+        $height: 125px;
         background-color: $color-brand;
         color: $color-foreground-light;
         font-size: 3em;
@@ -32,7 +35,7 @@
 
     &-week {
         background-color: $color-background-light;
-        height: 130px;
+        height: 80px;
         line-height: 0;
         list-style: none;
         margin: 0;
@@ -80,6 +83,21 @@
             padding-bottom: 100%;
         }
 
+        &--void {
+            &:hover:before {
+                background: transparent;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &-day_wrapper {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
         &:hover:before {
             background: rgba($color-brand, .3);
             content: '';
@@ -88,13 +106,6 @@
             position: absolute;
             width: 100%;
             z-index: 1;
-        }
-
-        &--void {
-            &:hover:before {
-                background: transparent;
-                cursor: not-allowed;
-            }
         }
     }
 

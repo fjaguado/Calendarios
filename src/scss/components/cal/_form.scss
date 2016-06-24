@@ -1,0 +1,65 @@
+@import '../../base/variables';
+
+.cal-form {
+    left: -50%;
+    min-height: 50%;
+    position: absolute;
+    top: 50%;
+    width: 200%;
+    z-index: 10;
+
+    &::before {
+        $size: 25px;
+        border-bottom: solid $size $color-background-semilight;
+        border-left: solid $size transparent;
+        border-right: solid $size transparent;
+        content: '';
+        height: 0;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        top: -$size;
+        width: 0;
+        z-index: 10;
+    }
+
+    &-overlay {
+        background: rgba($color-background-light, .4);
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &-content {
+        background: $color-background-semilight;
+        display: block;
+        padding: 2% 5%;
+        position: absolute;
+        width: 100%;
+    }
+
+    &-close {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    &-label,
+    &-labeltext,
+    &-input,
+    &-select {
+        display: block;
+    }
+
+    &-labeltext {
+        $size: 1.2em;
+        font-size: $size;
+        line-height: $size;
+        padding-bottom: $size/2;
+    }
+}
