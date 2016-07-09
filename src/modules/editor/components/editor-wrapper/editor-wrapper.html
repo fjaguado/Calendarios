@@ -4,9 +4,21 @@
 <cal-months class="cal-months">
     <div class="cal-months-month"
         ng-repeat="month in $ctrl.months">
-        
+
         <h2 class="cal-months-header">
-            {{'Months.' + month.month | translate}}
+            <div class="cal-months-arrow"
+                ng-if="!$first">
+                <
+            </div>
+
+            <div class="cal-months-title">
+                {{'Months.' + month.month | translate}}
+            </div>
+
+            <div class="cal-months-arrow cal-months-arrow--right"
+                ng-if="!$last">
+                >
+            </div>
         </h2>
         <ul class="cal-months-week">
             <li class="cal-months-week_day"

@@ -12,14 +12,14 @@
         font-size: .8em;
         margin: 0 auto;
         margin-bottom: 20px;
-        width: 90%;
+        width: 115vh;
     }
 
     &-header {
-        $height: 125px;
+        $height: 10vh;
         background-color: $color-brand;
         color: $color-foreground-light;
-        font-size: 3em;
+        font-size: 4vh;
         height: $height;
         line-height: $height;
         margin: 0;
@@ -48,7 +48,7 @@
         border-right: $border;
         color: $color-foreground-semidark;
         display: inline-block;
-        font-size: 2em;
+        font-size: 3vh;
         margin-left: -$border-size;
         padding-top: .6em;
         text-align: center;
