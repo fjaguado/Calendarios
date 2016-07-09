@@ -12,6 +12,7 @@
         font-size: .8em;
         margin: 0 auto;
         margin-bottom: 20px;
+        min-width: 700px;
         width: 115vh;
     }
 
@@ -23,6 +24,7 @@
         height: $height;
         line-height: $height;
         margin: 0;
+        position: relative;
         text-align: center;
         text-transform: uppercase;
         vertical-align: middle;
@@ -33,13 +35,25 @@
         }
     }
 
+    &-arrow {
+        cursor: pointer;
+        left: 5vh;
+        position: absolute;
+        top: 0;
+
+        &--right {
+            left: initial;
+            right: 5vh;
+        }
+    }
+
     &-week {
         background-color: $color-background-light;
         height: 80px;
         line-height: 0;
         list-style: none;
         margin: 0;
-        padding: $padding-v ($padding-h - $border-size) 0 $padding-h;
+        padding: $padding-v 0 0 $padding-h;
         width: 100%;
     }
 
@@ -48,7 +62,7 @@
         border-right: $border;
         color: $color-foreground-semidark;
         display: inline-block;
-        font-size: 3vh;
+        font-size: 2.8vh;
         margin-left: -$border-size;
         padding-top: .6em;
         text-align: center;
@@ -66,7 +80,7 @@
         line-height: 0;
         list-style: none;
         margin: 0;
-        padding: 0 ($padding-h - $border-size) $padding-v $padding-h;
+        padding: 0 0 $padding-v $padding-h;
     }
 
     &-day {

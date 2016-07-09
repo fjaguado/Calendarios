@@ -1,7 +1,7 @@
 (function(global, angular) {
     'use strict';
 
-    function EditorController($rootScope, monthsService, calendarService) {
+    function EditorController($rootScope, $anchorScroll, $location, monthsService, calendarService) {
         this.months = monthsService.get();
         this.weekDays = monthsService.getWeek();
         this.events = calendarService.get().events;
@@ -29,6 +29,11 @@
             }
 
             this[infoKey] = event;
+        };
+
+        this.goTo = function(index) {
+            $location.hash('month_' + index);
+            $anchorScroll();
         };
 
         $rootScope.$on('calendarUpdated', this.refresh);

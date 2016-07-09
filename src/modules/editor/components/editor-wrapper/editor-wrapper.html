@@ -5,9 +5,11 @@
     <div class="cal-months-month"
         ng-repeat="month in $ctrl.months">
 
+        <a id="month_{{$index}}"></a>
         <h2 class="cal-months-header">
             <div class="cal-months-arrow"
-                ng-if="!$first">
+                 ng-click="$ctrl.goTo($index - 1)"
+                 ng-if="!$first">
                 <
             </div>
 
@@ -16,7 +18,8 @@
             </div>
 
             <div class="cal-months-arrow cal-months-arrow--right"
-                ng-if="!$last">
+                 ng-click="$ctrl.goTo($index + 1)"
+                 ng-if="!$last">
                 >
             </div>
         </h2>
