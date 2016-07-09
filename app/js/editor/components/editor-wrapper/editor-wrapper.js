@@ -24,7 +24,7 @@
             this[popoverKey] = !this[popoverKey];
             this[popoverKey2] = !this[popoverKey2];
             
-            if(!event) {
+            if (!event) {
                 return;
             }
 

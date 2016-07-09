@@ -13,17 +13,24 @@
         };
 
         this.save = function () {
-            this.information.id = calendarService.check(this.month, this.day, this.information) || this.month + '-' + this.day + '' + Date.now();
+            this.information.id = this.information.id || this.month + '-' + this.day + '' + Date.now();
             calendarService.set(this.month, this.day, this.information);
             this.close();
             this.clean();
         };
 
+        this.remove = function () {
+            calendarService.remove(this.month, this.day, this.information);
+            this.close();
+            this.clean();
+            this.event = this.information;
+        };
+
         this.$onChanges = function(changes) {
-            if(changes.toggle) {
+            if (changes.toggle) {
                 this.information = this.event;
             }
-        }
+        };
     }
 
     angular.module('app.editor')

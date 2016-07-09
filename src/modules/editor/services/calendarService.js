@@ -9,7 +9,7 @@
 
     function calendarService($rootScope, localStorage) {
         var stored = localStorage.get(storage);
-        if(stored) {
+        if (stored) {
             calendar = stored;
         }
 
@@ -30,29 +30,33 @@
                 calendar.events[month][day] = {};
             }
 
-            calendar.events[month][day][information.id] = information;
-            this.save();
-            this.broadcast(information);
-            return calendar.events[month][day][information.id];
-        };
-
-        this.check = function(month, day, information) {
-            if (!calendar.events[month] || !calendar.events[month][day] || !calendar.events[month][day][information.id]) {
-                return false;
+            if (!calendar.events[month][day].events) {
+                calendar.events[month][day].events = {};
+                calendar.events[month][day].num = 0;
             }
 
-            return (calendar.events[month][day][information.id]).id;
+            calendar.events[month][day].num = calendar.events[month][day].num + 1;
+            calendar.events[month][day].events[information.id] = information;
+            this.save();
+            this.broadcast(information);
         };
 
         this.get = function() {
             return calendar;
         };
+
+        this.remove = function(month, day, information) {
+            calendar.events[month][day].num = calendar.events[month][day].num - 1;
+            delete calendar.events[month][day].events[information.id];
+            this.save();
+            this.broadcast(information);
+        };
         
         return {
             set: this.set,
-            check: this.check,
             get: this.get,
             save: this.save,
+            remove: this.remove,
             broadcast: this.broadcast
         };
     }

@@ -29,6 +29,15 @@
                 ng-click="$ctrl.save()">
             Guardar
         </button>
+        <button class="btn btn-default cal-form-button"
+                ng-click="$ctrl.close()">
+            Cancelar
+        </button>
+        <button class="btn btn-danger cal-form-button"
+                ng-if="$ctrl.event.id"
+                ng-click="$ctrl.remove()">
+            Borrar
+        </button>
     </div>
 
     <div class="cal-form-overlay" ng-click="$ctrl.close()"></div>
