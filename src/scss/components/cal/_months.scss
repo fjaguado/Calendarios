@@ -97,11 +97,6 @@
         position: absolute;
         top: 0;
         width: 100%;
-
-        &:hover {
-            background: rgba($color-brand, .3);
-            cursor: pointer;
-        }
     }
 
     &-day_info {
@@ -110,5 +105,40 @@
         position: absolute;
         right: 10%;
         top: 10%;
+    }
+
+    &-day_events {
+        bottom: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    &-day_event {
+        cursor: pointer;
+        display: block;
+        line-height: 1em;
+        overflow-x: hidden;
+        padding: 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+
+        &:hover {
+            background: rgba($color-brand, .3);
+        }
+
+        &--add {
+            font-weight: bold;
+            text-align: center;
+
+            &:hover {
+                background: transparent;
+                color: $color-brand;
+                font-size: 1.2em;
+            }
+        }
     }
 }

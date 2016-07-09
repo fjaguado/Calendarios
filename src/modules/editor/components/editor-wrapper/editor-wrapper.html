@@ -26,22 +26,23 @@
                     </div>
 
                     <ul class="cal-months-day_events">
-                        <li class="cal-months-day_events_add"
-                            ng-click="$ctrl['showPopover' + month.month + dayInfo.day] = !$ctrl['showPopover' + month.month + dayInfo.day]">
+                        <li class="cal-months-day_event cal-months-day_event--add"
+                            ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
                             ( + )
                         </li>
 
                         <li class="cal-months-day_event"
                             ng-repeat="(id, event) in $ctrl.events[month.month][dayInfo.day]"
-                            ng-click="$ctrl['information' + month.month + dayInfo.day] = event; $ctrl['showPopover' + month.month + dayInfo.day] = !$ctrl['showPopover' + month.month + dayInfo.day]">
+                            ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
                             {{event.title}}
                         </li>
                     </ul>
                 </div>
                 <cal-form   month="month.month" 
                             day="dayInfo.day" 
-                            information="$ctrl['information' + month.month + dayInfo.day]" 
-                            show="$ctrl['showPopover' + month.month + dayInfo.day]"></cal-form>
+                            event="$ctrl[$ctrl.infoKeyString + month.month + dayInfo.day]"
+                            show="$ctrl[$ctrl.popoverKeyString + month.month + dayInfo.day]"
+                            toggle="$ctrl[$ctrl.popoverKeyString2 + month.month + dayInfo.day]"></cal-form>
             </li>
         </ul>
     </div>

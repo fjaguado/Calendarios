@@ -13,11 +13,17 @@
         };
 
         this.save = function () {
-            this.information.id = this.month + '-' + this.day + '' + Date.now();
-            calendarService.add(this.month, this.day, this.information);
+            this.information.id = calendarService.check(this.month, this.day, this.information) || this.month + '-' + this.day + '' + Date.now();
+            calendarService.set(this.month, this.day, this.information);
             this.close();
             this.clean();
         };
+
+        this.$onChanges = function(changes) {
+            if(changes.toggle) {
+                this.information = this.event;
+            }
+        }
     }
 
     angular.module('app.editor')
@@ -27,7 +33,8 @@
                 month: '=',
                 day: '=',
                 show: '=',
-                information: '<'
+                toggle: '<',
+                event: '<'
             },
             templateUrl: 'modules/editor/components/form/form.html'
         });
