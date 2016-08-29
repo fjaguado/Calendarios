@@ -42,13 +42,13 @@
 
                     <ul class="cal-months-day_events">
                         <li class="cal-months-day_event cal-months-day_event--add"
-                            ng-if="!$ctrl.events[month.month][dayInfo.day].num || $ctrl.events[month.month][dayInfo.day].num < 3"
+                            ng-if="!$ctrl.events[month.month + dayInfo.day].num || $ctrl.events[month.month + dayInfo.day].num < 3"
                             ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
                             ( + )
                         </li>
 
                         <li class="cal-months-day_event"
-                            ng-repeat="(id, event) in $ctrl.events[month.month][dayInfo.day].events"
+                            ng-repeat="(id, event) in $ctrl.events[month.month + dayInfo.day].events"
                             ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
                             {{event.title}}
                         </li>

@@ -9,6 +9,15 @@
                     content: {
                         component: 'calEditorWrapper'
                     }
+                },
+                resolve: {
+                    data: function($q, calendarService) {
+                        var deferred = $q.defer();
+                        calendarService.get().then(function(calendar) {
+                            deferred.resolve(calendar);
+                        });
+                        return deferred.promise;
+                    }
                 }
             });
     }

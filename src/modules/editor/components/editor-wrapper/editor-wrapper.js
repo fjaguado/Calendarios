@@ -1,17 +1,17 @@
 (function(global, angular) {
     'use strict';
 
-    function EditorController($rootScope, $anchorScroll, $location, monthsService, calendarService) {
+    function EditorController($rootScope, $anchorScroll, $location, monthsService) {
         this.months = monthsService.get();
         this.weekDays = monthsService.getWeek();
-        this.events = calendarService.get().events;
+        this.events = this.data.events;
         this.infoKeyString = 'information';
         this.popoverKeyString = 'showPopover';
         this.popoverKeyString2 = 'showPopover2';
 
         var self = this;
         this.refresh = function() {
-            self.events = calendarService.get().events;
+            self.events = self.data.events;
         };
 
         this.onClickEvent = function(event, month, dayInfo) {
@@ -42,6 +42,9 @@
     angular.module('app.editor')
         .component('calEditorWrapper', {
             controller: EditorController,
+            bindings: {
+                data: '<'
+            },
             templateUrl: 'modules/editor/components/editor-wrapper/editor-wrapper.html'
         });
 

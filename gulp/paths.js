@@ -12,6 +12,7 @@ module.exports = {
             roots.libs + '/jquery/dist/jquery.js',
             roots.libs + '/bootstrap-sass/assets/javascripts/bootstrap.js',
             roots.libs + '/angular/angular.js',
+            roots.libs + '/localforage/dist/localforage.js',
             roots.libs + '/angular-cookies/angular-cookies.js',
             roots.libs + '/angular-translate/dist/angular-translate.js',
             roots.libs + '/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
@@ -50,6 +51,7 @@ module.exports = {
                 folder: roots.app + '/js',
                 files: [roots.app + '/js/vendor/jquery.js',
                         roots.app + '/js/vendor/angular.js',
+                        roots.app + '/js/vendor/localforage.js',
                         roots.app + '/js/vendor/angular-translate.js',
                         roots.app + '/js/vendor/**/*.js',
                         roots.app + '/js/app-module.js',
@@ -59,6 +61,7 @@ module.exports = {
 
                 test: [roots.app + '/js/vendor/jquery.js',
                        roots.app + '/js/vendor/angular.js',
+                       roots.app + '/js/vendor/localforage.js',
                        roots.libs + '/angular-mocks/angular-mocks.js',
                        roots.app + '/js/vendor/angular-translate.js',
                        roots.app + '/js/vendor/**/*.js',
