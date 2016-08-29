@@ -1,61 +1,61 @@
 (function(global, angular) {
     'use strict';
 
+    var keys = {
+        events: 'cal_events_',
+        images: 'cal_images_'
+    }
+
     var calendar = {
-        events: {}
+        events: {},
+        images: {}
     };
 
-    var storage = 'calendar_helpdev';
-
-    function calendarService($rootScope, localStorage) {
-        var stored = localStorage.get(storage);
-        if (stored) {
-            calendar = stored;
-        }
+    function calendarService($rootScope, storageService) {
 
         this.broadcast = function(information) {
             $rootScope.$broadcast('calendarUpdated', information);
         };
-
-        this.save = function() {
-            localStorage.set(storage, calendar);
-        };
         
         this.set = function(month, day, information) {
-            if (!calendar.events[month]) {
-                calendar.events[month] = {};
+            var key = month + day;
+            if (!calendar.events[key]) {
+                calendar.events[key] = {};
             }
 
-            if (!calendar.events[month][day]) {
-                calendar.events[month][day] = {};
+            if (!calendar.events[key].events) {
+                calendar.events[key].events = {};
+                calendar.events[key].num = 0;
             }
 
-            if (!calendar.events[month][day].events) {
-                calendar.events[month][day].events = {};
-                calendar.events[month][day].num = 0;
-            }
-
-            calendar.events[month][day].num = calendar.events[month][day].num + 1;
-            calendar.events[month][day].events[information.id] = information;
-            this.save();
+            calendar.events[key].num = calendar.events[key].num + 1;
+            calendar.events[key].events[information.id] = information;
+            storageService.set(keys.events + key, calendar.events[key]);
             this.broadcast(information);
         };
 
         this.get = function() {
-            return calendar;
+            return storageService.iterate(function(value, key) {
+                var _key = key.split('_');
+                if (_key.length > 1) {
+                    calendar[_key[1]][_key[2]] = value;
+                }
+            }).then(function() {
+                return calendar;
+            });
         };
 
         this.remove = function(month, day, information) {
-            calendar.events[month][day].num = calendar.events[month][day].num - 1;
-            delete calendar.events[month][day].events[information.id];
-            this.save();
+            var key = month + day;
+            calendar.events[key].num = calendar.events[key].num - 1;
+            delete calendar.events[key].events[information.id];
+            storageService.set(keys.events + key, calendar.events[key]);
             this.broadcast(information);
         };
         
         return {
             set: this.set,
             get: this.get,
-            save: this.save,
             remove: this.remove,
             broadcast: this.broadcast
         };
