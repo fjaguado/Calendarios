@@ -18,7 +18,8 @@ module.exports = {
             roots.libs + '/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
             roots.libs + '/angular-translate/dist/angular-translate-storage-local/angular-translate-storage-local.js',
             roots.libs + '/angular-translate/dist/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
-            roots.libs + '/angular-ui-router/release/angular-ui-router.js'
+            roots.libs + '/angular-ui-router/release/angular-ui-router.js',
+            roots.libs + '/ng-file-model/ng-file-model.js'
         ],
 
         scss: {

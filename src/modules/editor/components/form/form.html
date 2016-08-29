@@ -25,6 +25,15 @@
                 </select>
         </label>
 
+        <label class="cal-form-label">
+                <span class="cal-form-labeltext">
+                    Imagen
+                </span>
+                <input type="file" 
+                        ng-file-model="$ctrl.information.image"
+                        class="form-control cal-form-input">
+        </label>
+
         <button class="btn btn-primary cal-form-button"
                 ng-click="$ctrl.save()">
             Guardar

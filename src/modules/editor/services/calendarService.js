@@ -4,7 +4,7 @@
     var keys = {
         events: 'cal_events_',
         images: 'cal_images_'
-    }
+    };
 
     var calendar = {
         events: {},
@@ -30,6 +30,9 @@
 
             calendar.events[key].num = calendar.events[key].num + 1;
             calendar.events[key].events[information.id] = information;
+            var stamp = Date.now();
+            storageService.set(keys.images + key + stamp, information.image);
+            calendar.events[key].events[information.id].image = key + stamp;
             storageService.set(keys.events + key, calendar.events[key]);
             this.broadcast(information);
         };

@@ -13,6 +13,7 @@
     "bootstrap-sass": "^3.3.6",
     "jquery": "^2.2.3",
     "localforage": "^1.4.2",
+    "ng-file-model": "0.0.5",
     "normalize-scss": "^4.0.3"
   },
   "devDependencies": {

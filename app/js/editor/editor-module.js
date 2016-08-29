@@ -2,6 +2,7 @@
     'use strict';
     
     angular.module('app.editor', [
-        'app.translate'
+        'app.translate',
+        'ng-file-model'
     ]);
 })(this, angular);
