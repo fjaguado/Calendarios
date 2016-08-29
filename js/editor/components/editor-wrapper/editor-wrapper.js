@@ -5,6 +5,7 @@
         this.months = monthsService.get();
         this.weekDays = monthsService.getWeek();
         this.events = this.data.events;
+        this.images = this.data.images;
         this.infoKeyString = 'information';
         this.popoverKeyString = 'showPopover';
         this.popoverKeyString2 = 'showPopover2';
@@ -12,6 +13,7 @@
         var self = this;
         this.refresh = function() {
             self.events = self.data.events;
+            self.images = self.data.images;
         };
 
         this.onClickEvent = function(event, month, dayInfo) {
@@ -34,6 +36,12 @@
         this.goTo = function(index) {
             $location.hash('month_' + index);
             $anchorScroll();
+        };
+
+        this.getImage = function(image) {
+            var blob = new Blob([image]);
+            var url = window.URL.createObjectURL(blob);
+            return url;
         };
 
         $rootScope.$on('calendarUpdated', this.refresh);
