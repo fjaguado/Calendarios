@@ -51,7 +51,13 @@
                             ng-repeat="(id, event) in $ctrl.events[month.month + dayInfo.day].events"
                             ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
                             {{event.title}}
-                            <img ng-if="$ctrl.images[event.image]" ng-src="{{$ctrl.images[event.image].data}}" alt="{{$ctrl.images[event.image].name}}">
+
+                            <div class="cal-months-thumb cal-months-thumb--{{$index}}">
+                                <img ng-if="$ctrl.images[event.image].data"
+                                     class="cal-months-thumb_image"
+                                     ng-src="{{$ctrl.images[event.image].data}}"
+                                     alt="{{$ctrl.images[event.image].name}}">
+                            </div>
                         </li>
                     </ul>
                 </div>

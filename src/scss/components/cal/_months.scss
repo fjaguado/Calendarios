@@ -155,4 +155,26 @@
             }
         }
     }
+
+    &-thumb {
+        position: absolute;
+        top: -100%;
+        width: 33%;
+
+        &--0 {
+            left: 33%;
+        }
+
+        &--1 {
+            left: 0;
+        }
+
+        &--2 {
+            left: 66%;
+        }
+    }
+
+    &-thumb_image {
+        max-width: 100%;
+    }
 }
