@@ -40,19 +40,19 @@
                             {{dayInfo.day}}
                     </div>
 
-                    <ul class="cal-months-day_events">
-                        <li class="cal-months-day_event cal-months-day_event--add"
-                            ng-if="!$ctrl.events[month.month + dayInfo.day].num || $ctrl.events[month.month + dayInfo.day].num < 3"
-                            ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
-                            ( + )
-                        </li>
+                    <span class="cal-months-add"
+                        ng-if="!$ctrl.events[month.month + dayInfo.day].num || $ctrl.events[month.month + dayInfo.day].num < 3"
+                        ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
+                        ( + )
+                    </span>
 
+                    <ul class="cal-months-day_events">
                         <li class="cal-months-day_event"
-                            ng-repeat="(id, event) in $ctrl.events[month.month + dayInfo.day].events"
+                            ng-repeat="(id, event) in _events = ($ctrl.events[month.month + dayInfo.day].events)"
                             ng-click="$ctrl.onClickEvent(event, month, dayInfo)">
                             {{event.title}}
 
-                            <div class="cal-months-thumb cal-months-thumb--{{$index}}">
+                            <div class="cal-months-thumb cal-months-thumb--{{($index+1)}}_{{$ctrl.keys(_events).length}}">
                                 <img ng-if="$ctrl.images[event.image].data"
                                      class="cal-months-thumb_image"
                                      ng-src="{{$ctrl.images[event.image].data}}"

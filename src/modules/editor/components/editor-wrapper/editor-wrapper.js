@@ -44,6 +44,10 @@
             return url;
         };
 
+        this.keys = function(obj) {
+            return Object.keys(obj);
+        };
+
         $rootScope.$on('calendarUpdated', this.refresh);
     }
 

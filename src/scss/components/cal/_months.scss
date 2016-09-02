@@ -114,11 +114,19 @@
     }
 
     &-day_info {
+        $size: 1.2em;
+        background-color: rgba($color-background-light, .8);
+        border-radius: 50%;
         color: $color-foreground-semidark;
-        font-size: 1.5em;
+        font-size: $size;
+        height: $size;
+        line-height: $size - .3em;
+        padding: 3px;
         position: absolute;
-        right: 10%;
-        top: 10%;
+        right: 3%;
+        top: 4%;
+        width: 1.5em;
+        z-index: 10;
     }
 
     &-day_events {
@@ -156,21 +164,56 @@
         }
     }
 
+    &-add {
+        cursor: pointer;
+        left: 4%;
+        position: absolute;
+        top: 9%;
+
+        &:hover {
+            font-weight: 600;
+        }
+    }
+
     &-thumb {
         position: absolute;
-        top: -100%;
+        top: -80%;
         width: 33%;
 
-        &--0 {
-            left: 33%;
+        &--1_1 {
+            left: 22%;
+            top: -430%;
+            width: 64%;
         }
 
-        &--1 {
+        &--1_2 {
             left: 0;
+            top: -165%;
+            width: 50%;
         }
 
-        &--2 {
-            left: 66%;
+        &--2_2 {
+            right: 0;
+            top: -165%;
+            width: 50%;
+        }
+
+        &--1_3 {
+            left: 0;
+            top: -80%;
+            width: 33.3333%;
+        }
+
+        &--2_3 {
+            left: 33.3333%;
+            top: -80%;
+            width: 33.3333%;
+        }
+
+        &--3_3 {
+            right: 0;
+            top: -80%;
+            width: 33.3333%;
         }
     }
 
